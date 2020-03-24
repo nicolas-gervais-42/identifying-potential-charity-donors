@@ -61,6 +61,7 @@ def evaluate(results, accuracy, f1):
   
     # Create figure
     fig, ax = pl.subplots(2, 3, figsize = (11,7))
+    fig.tight_layout(pad = 3.0)
 
     # Constants
     bar_width = 0.3
@@ -111,11 +112,10 @@ def evaluate(results, accuracy, f1):
     for i, learner in enumerate(results.keys()):
         patches.append(mpatches.Patch(color = colors[i], label = learner))
     pl.legend(handles = patches, bbox_to_anchor = (-.80, 2.53), \
-               loc = 'upper center', borderaxespad = 0., ncol = 3, fontsize = 'x-large')
+               loc = 'upper center', borderaxespad = 0., ncol = 3, fontsize = 'small')
     
     # Aesthetics
     pl.suptitle("Performance Metrics for Three Supervised Learning Models", fontsize = 16, y = 1.10)
-    pl.tight_layout()
     pl.show()
     
 
